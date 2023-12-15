@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* colored sweet alert */
+.colored-toast.swal2-icon-success {
+  background-color: #a5dc86 !important;
+}
+.colored-toast.swal2-icon-error {
+  background-color: #f27474 !important;
+}
+
+/* delete arrow in number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@layer components {
+  .navbar {
+    @apply sticky top-0 z-20 block w-full py-4 shadow-md bg-primary-1 text-light-1;
+  }
+  .navbar_child {
+    @apply relative flex items-center justify-between w-full px-4 md:px-8 lg:px-12;
+  }
+  .navbar_field {
+    @apply absolute top-0 z-10 flex flex-col items-center justify-center w-full h-screen gap-8 transition-all duration-300 ease-in bg-primary-1 md:flex-row md:static md:w-auto md:h-auto;
+  }
+  .social_icon {
+    @apply p-2 duration-300 border-2 rounded-full text-light-1 border-light-1 hover:text-primary-1 hover:bg-light-1;
+  }
+  .social_icon_text {
+    @apply flex items-center gap-1 text-sm sm:text-base sm:gap-2 text-light-1;
+  }
+  .card {
+    @apply flex flex-col justify-between max-w-sm gap-2 p-4 border rounded-md shadow-lg text-dark-1;
+  }
+  .left_arrow_slider {
+    @apply absolute left-0 top-1/2 -translate-y-1/2 bg-gradient-to-r from-white from-65% to-transparent w-12 h-full flex items-center justify-start;
+  }
+  .right_arrow_slider {
+    @apply absolute z-1 right-0 top-1/2 -translate-y-1/2 bg-gradient-to-l from-white from-65% to-transparent w-12 h-full flex items-center justify-end;
+  }
+  .dropdown_content {
+    @apply absolute flex-col hidden gap-2 p-4 -translate-x-1/2 rounded-md top-10 left-1/2 bg-light-1 text-primary-1 group-hover:flex z-1;
+  }
+  .card_form {
+    @apply w-full max-w-sm p-4 mx-auto border border-gray-200 shadow-lg rounded-3xl bg-light-1 z-1 sm:p-6 md:p-8;
+  }
+  .input_form {
+    @apply w-full p-2 px-8 text-sm transition-all border-b-2 outline-none border-b-dark-fade focus:border-b-primary-1 text-dark-1;
+  }
+  .button {
+    @apply relative flex items-center justify-center font-semibold transition-all duration-300 shadow-sm cursor-pointer w-max;
+  }
+  .link {
+    @apply relative text-base font-semibold transition-all duration-300 cursor-pointer md:text-lg w-max;
+  }
+  .container_profile_section {
+    @apply flex flex-col items-center !max-w-container-2 gap-8 sm:gap-4 md:gap-20 sm:flex-row h-fit md:min-h-500;
+  }
+}
